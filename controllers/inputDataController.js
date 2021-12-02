@@ -6,3 +6,10 @@ exports.getIndexPage = (req,res,next)=>{
         res.render('index',{result: result});
     })
 }
+
+exports.postFormData = (req,res,next)=>{
+
+    const email = req.body.email;
+    console.log(email);
+    res.redirect('/');
+}
