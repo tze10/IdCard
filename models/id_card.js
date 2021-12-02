@@ -42,3 +42,5 @@ const IdCard = sequelize.define('idCard',{
         allowNull: true,
     },
 });
+
+module.exports = IdCard;
