@@ -16,7 +16,7 @@ sequelize.sync().then((result)=>{
     return IdCard.findByPk(1);
 }).then((idCard)=>{
     if(!idCard){
-        return IdCard.create({college_id:"4567", roll_no: 51,name:"ashok kumar", dob:"15-11-1996", address:"1576 amapola Ny NY", photo:"url pasted here",designation: "COO", blood_group: "B+"});
+        return IdCard.create({college_id:"4567", roll_no: 51,name:"ashok kumar", dob:"15-11-1996", address:"1576 amapola Ny NY",email:"killer@elite.com", photo:"url pasted here",designation: "COO", blood_group: "B+"});
     }
     return Promise.resolve(idCard);
 }).then((idCard)=>{

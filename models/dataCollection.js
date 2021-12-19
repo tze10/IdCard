@@ -9,15 +9,17 @@ module.exports = class DataCollector {
   }
 
   idCardData(rollno, name, dob, address, email) {
-    IdCard.create({
-      college_id: 1001,
-      roll_no: rollno,
-      name: name,
-      dob: dob,
-      address: address,
-      photo: "testing",
-      designation: "testing",
-      blood_group: "testing",
-    });
+    // IdCard.create({
+    //   college_id: 1001,
+    //   roll_no: rollno,
+    //   name: name,
+    //   dob: dob,
+    //   address: address,
+    //   email:email,
+    //   photo: "testing",
+    //   designation: "testing",
+    //   blood_group: "testing",
+    // });
+    console.log("success");
   }
 };

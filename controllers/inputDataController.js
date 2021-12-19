@@ -1,4 +1,4 @@
-const DataDisplay = require("../models/dataDisplay");
+
 const IdCard = require("../models/id_card");
 
 const DataCollector = require("../models/dataCollection");
@@ -15,8 +15,6 @@ exports.getFormsPage = (req, res, next) =>{
 }
 
 exports.getIdCardsPage = (req, res, next) =>{
-  //  const dataDisplay = new DataDisplay();
-  //  dataDisplay.displayIdCards();
   IdCard.findAll({
     where:{
       name: 'ashok Kumar'
@@ -27,13 +25,13 @@ exports.getIdCardsPage = (req, res, next) =>{
 }
 
 exports.postFormData = (req, res, next) => {
-  const rollno = req.body.rollNo;
-  const name = req.body.firstName;
-  const dob = req.body.dob;
-  const address = req.body.address;
-  const email = req.body.email;
-  const imageUpload = req.body.imgUpload;
+  // const rollno = req.body.rollNo;
+  // const name = req.body.firstName;
+  // const dob = req.body.dob;
+  // const address = req.body.address;
+  // const email = req.body.email;
+  const imageUpload = req.file;
   console.log(imageUpload);
-  dataCollector.idCardData(rollno, name, dob, address, email);
+  // dataCollector.idCardData(rollno, name, dob, address, email);
   res.redirect("/");
 };

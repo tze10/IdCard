@@ -29,6 +29,10 @@ const IdCard = sequelize.define('idCard',{
         type: Sequelize.STRING,
         allowNull: false,
     },
+    email:{
+        type: Sequelize.STRING,
+        allowNull:false,
+    },
     photo: {
         type: Sequelize.STRING,
         allowNull: false,
