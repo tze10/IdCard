@@ -16,11 +16,12 @@ const router = express.Router();
 const inputDataController = require('../controllers/inputDataController');
 
 //Get Methods
-router.get('/', inputDataController.getIndexPage);
-router.get('/form',inputDataController.getFormsPage);
-router.get('/id-cards', inputDataController.getIdCardsPage);
+router.get('/', inputDataController.indexPage);
+router.get('/form',inputDataController.formsPage);
+router.get('/id-cards', inputDataController.idCardsPage);
 
 //Post Methods
-router.post('/id-value',upload.single('imgUpload'), inputDataController.postFormData);
+router.post('/id-value', inputDataController.formData);
+router.post('/img-upload',upload.single('imgUpload'),inputDataController.imageUpload);
 
 module.exports = router;
