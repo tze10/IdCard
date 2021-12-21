@@ -30,10 +30,9 @@ exports.formData = (req, res, next) => {
   const dob = req.body.dob;
   const address = req.body.address;
   const email = req.body.email;
-  const imageUpload = req.file;
-  console.log(imageUpload);
   dataCollector.idCardData(rollno, name, dob, address, email);
-  res.redirect("/");
+  // res.redirect("/");
+  res.render('id-image');
 };
 
 
