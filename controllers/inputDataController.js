@@ -1,4 +1,3 @@
-
 const IdCard = require("../models/id_card");
 
 const DataCollector = require("../models/dataCollection");
@@ -14,14 +13,23 @@ exports.formsPage = (req, res, next) =>{
     res.render('form')
 }
 
-exports.idCardsPage = (req, res, next) =>{
-  IdCard.findAll({
-    where:{
-      name: 'ashok Kumar'
-    }
-  }).then(ids=>{
-    res.render('id-cards',{ids: ids});
-  })
+// exports.idCardsPage = (req, res, next) =>{
+//   IdCard.findAll({
+//     where:{
+//       name: 'ashok Kumar'
+//     }
+//   }).then(ids=>{
+//     res.render('id-cards',{ids: ids});
+//   })
+// }
+
+exports.idCardsPage = (req, res) =>{
+  console.log(req.params.name)
+ IdCard.findByPk(1).then(ids =>{
+   const idsName = ids.name;
+   console.log(idsName)
+   res.render('id-cards',{ids: ids})
+ });
 }
 
 exports.formData = (req, res, next) => {
@@ -39,6 +47,6 @@ exports.formData = (req, res, next) => {
 exports.imageUpload = (req, res, next) =>{
   const imageUpload = req.file
   if(imageUpload){
-    res.redirect('/');
+    res.redirect('/id-cards/boomer');
   }
 }
