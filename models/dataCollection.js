@@ -21,5 +21,6 @@ module.exports = class DataCollector {
     //   blood_group: "testing",
     // });
     console.log("success");
+    // need to add id number return here
   }
 };

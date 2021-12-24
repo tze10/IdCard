@@ -1,14 +1,4 @@
-const multer  = require('multer')
-// const upload = multer({ dest: 'data/' })
 
-var storage = multer.diskStorage({
-    destination: 'data/',
-    filename: (req, file, cb)=>{
-        cb(null, file.originalname)
-    }
-    });
-  
-var upload = multer({ storage: storage });
 
 const express = require('express');
 const router = express.Router();
@@ -22,6 +12,6 @@ router.get('/id-cards/:name', inputDataController.idCardsPage);
 
 //Post Methods
 router.post('/id-value', inputDataController.formData);
-router.post('/img-upload',upload.single('imgUpload'),inputDataController.imageUpload);
+router.post('/img-upload',inputDataController.uploadImage,inputDataController.imageUpload);
 
 module.exports = router;
